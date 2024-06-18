@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const multer = require('multer');
+const basicAuth = require('express-basic-auth'); // Import express-basic-auth
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,9 +21,16 @@ const upload = multer({ storage });
 // Serve static files (CSS, images, etc.) from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Basic Authentication Middleware
+const auth = basicAuth({
+    users: { 'admin': 'admin@1234' }, // Username: admin, Password: admin@1234
+    challenge: true, // Display authentication dialog
+    unauthorizedResponse: 'Unauthorized', // Message for unauthorized users
+});
+
 // Route to fetch and display images
 app.get('/images', (req, res) => {
-    const imageDirectory = path.join(__dirname, 'public', 'images'); // Path to your images directory
+    const imageDirectory = path.join(__dirname, 'public', 'images');
     fs.readdir(imageDirectory, (err, files) => {
         if (err) {
             console.error('Error reading directory:', err);
@@ -54,8 +62,8 @@ app.get('/images', (req, res) => {
     });
 });
 
-// Route to serve the upload form
-app.get('/upload-image', (req, res) => {
+// Route to serve the upload form with basic authentication
+app.get('/upload-image', auth, (req, res) => {
     const htmlForm = `
         <!DOCTYPE html>
         <html lang="en">
@@ -80,7 +88,7 @@ app.get('/upload-image', (req, res) => {
 });
 
 // Route to handle file upload
-app.post('/upload', upload.single('image'), (req, res) => {
+app.post('/upload', auth, upload.single('image'), (req, res) => {
     // Redirect back to images page after successful upload
     res.redirect('/images');
 });
