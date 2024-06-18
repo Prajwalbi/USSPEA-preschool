@@ -1,0 +1,41 @@
+.logoimg {
+    height: 80px;
+    width: 90px;
+}
+
+.intro-section {
+    background-color: #6c63ff;
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.intro-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.intro-section p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.intro-section .btn-primary {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #6c63ff;
+    font-weight: 600;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.intro-section .btn-primary:hover {
+    background-color: #fff;
+    color: #6c63ff;
+}
