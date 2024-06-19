@@ -123,7 +123,7 @@ app.get('/images', (req, res) => {
                 <!-- Page Header -->
                 <div class="container-xxl py-5 page-header position-relative mb-5" id="page-header">
                     <div class="container py-5">
-                        <h1 class="display-2 text-white animated slideInDown mb-4">Image Gallery</h1>
+                        <h1 class="display-2 text-white animated slideInDown mb-4">Our Gallery</h1>
                         <!-- Breadcrumbs -->
                         <nav aria-label="breadcrumb animated slideInDown">
                             <ol class="breadcrumb">
@@ -151,12 +151,6 @@ app.get('/images', (req, res) => {
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i><a href="https://g.co/kgs/eQbfjYy" target="_blank" style="color: rgba(255, 255, 255, 0.5) !important;">WG57+QV8, near Old manipal Hospital, 5th Stage, Rajarajeshwari Nagar, Bengaluru, Karnataka 560098</a></p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+91 99809 69382" style="color: rgba(255, 255, 255, 0.5) !important;">+91 99809 69382</a></p>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:reach.vsspea@gmail.com" style="color: rgba(255, 255, 255, 0.5) !important;">reach.vsspea@gmail.com</a></p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h3 class="text-white mb-4">Quick Links</h3>
